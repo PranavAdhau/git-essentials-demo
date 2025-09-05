@@ -10,14 +10,14 @@ The goal of this repo is:
 ---
 
 ## 📂 Project Structure
+```bash
 git-collaboration-demo/
 │
 ├── index.html # Main HTML file
 ├── style.css # Basic styling
 ├── script.js # JavaScript starter file
 └── README.md # Git notes + project details
-
-
+```
 ---
 
 ## 🌐 Project Overview
@@ -60,23 +60,23 @@ git commit -m "First commit: added file.txt"
 
 # Check history
 git log --oneline --graph
-
 ```
 ---
+## 🔄 Merging Techniques
 
-🔄 Merging Techniques
+### 🔹 Fast Forward Merge
 
-🔹 Fast Forward Merge
 - Used when the target branch has no new commits.
+
 - Git just moves the pointer forward (no merge commit).
 
-🔹 Three-Way Merge
+### 🔹 Three-Way Merge
+
 - Used when both branches have commits.
+
 - Git creates a new merge commit to combine work.
-
 ---
-
-⚔️ Handling Merge Conflicts
+## ⚔️ Handling Merge Conflicts
 
 When two branches change the same line, Git asks you to resolve manually.
 
@@ -86,36 +86,72 @@ Steps:
 2. Edit & keep correct changes.
 
 3. git add + git commit → Conflict resolved.
-
+   
 ---
 
-🌿 Branching
+## 🌿 Branching
 
 - Create → git switch -C feature
 
 - Switch → git switch main
 
 - Delete → git branch -d feature
+  
 ---
-📦 Stashing
+
+## 📦 Stashing
 
 Temporarily save work without committing:
-```bash
+``` bash
 git stash
 git switch main
 git stash apply
 git stash clear
 ```
 ---
-🎯 Why This Repo?
+## 👥 Collaboration Workflow
 
-- ✅ Demonstrates Git & GitHub knowledge
-
-- ✅ Provides a starter template for frontend projects
-
-- ✅ Structured README for recruiters/HR to see my understanding clearly
-
-- ✅ Open for collaboration and contributions
+#### 🔹 Step 1: Clone the Repository (Collaborator / Owner first setup)
+```bash
+git clone https://github.com/PranavAdhau/git-essentials-demo.git
+cd git-essentials-demo
+```
 ---
+#### 🔹 Step 2: Work on a Feature Branch
+```bash
+git switch -C feature/adding-marque-effect
+git add .
+git commit -m "Added marquee feature"
+git push -u origin feature/adding-marque-effect
+```
+
+---
+#### 🔹 Step 3: Merge Feature into Main
+```bash
+git fetch
+git switch feature/adding-marque-effect
+git switch main
+git merge feature/adding-marque-effect
+git push origin main
+```
+---
+
+#### 🔹 Common Steps for Teams
+
+- The main branch owner creates the repo and initial files, then pushes to GitHub.
+
+- Owner adds collaborators on GitHub.
+
+- Each collaborator clones the repo.
+
+- Everyone must create their own branch, do coding there, commit & push.
+
+- After work is done, notify teammates.
+
+- A teammate (or owner) fetches and merges into main.
+
+
+---
+
 👨‍💻 Author: Pranav Adhau
 📅 Created On: September 2025
